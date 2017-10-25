@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>北京天气</title>
+    <link rel="stylesheet" type="text/css" href="/css/weather.css">
+</head>
+<body>
+
+  <ul>  
+    <table class="weather-table">
+        <% for(var i=0; i<data.length; i++) { %>  
+            <tr>  
+                <td><%= data[i].name %></td>
+                <td><%= data[i].content %></td> 
+            </tr>  
+        <% } %>  
+    </table>
+  </ul>  
+</body>
+</html>
