@@ -1,9 +1,17 @@
 import Koa from 'koa'
-const app = new Koa()
+import Router from 'koa-router'
+import routerConfig from './routes'
 
-app.use( ctx => {
-  ctx.body = 'Hello Koa'
-})
+const app = new Koa()
+const router = new Router()
+
+routerConfig(router)
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods)
+  
+
 
 app.listen(9527)
 
