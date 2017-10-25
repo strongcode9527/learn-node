@@ -1,0 +1,31 @@
+{
+  "name": "learn-node",
+  "version": "1.0.0",
+  "description": "demo for learning node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongcode9527/learn-node.git"
+  },
+  "author": "strong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strongcode9527/learn-node/issues"
+  },
+  "homepage": "https://github.com/strongcode9527/learn-node#readme",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.0"
+  }
+}
