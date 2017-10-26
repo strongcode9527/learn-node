@@ -1,3 +1,14 @@
 .weather-table {
-  background: red; 
+  border: 1px solid #333;
+  border-collapse: collapse;
+  width: 50%;
+  margin: 20px 0;
+}
+
+.weather-table td{
+  border: 1px solid #333;
+}
+
+.table-content {
+  padding: 0 20px;
 }

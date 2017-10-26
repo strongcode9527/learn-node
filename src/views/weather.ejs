@@ -5,13 +5,43 @@
     <link rel="stylesheet" type="text/css" href="/css/weather.css">
 </head>
 <body>
+  <ul>
+    <div style="margin: 20px 0;">天气刷新时间：<%= data.realtime.time %></div>
+    <div>
+        天气指数：
+        <table class="weather-table">
+            <tr>
+                <td>天气</td>
+                <td><%= data.realtime.weather %></td>
+            </tr>
+            <tr>
+                <td>温度</td>
+                <td><%= data.realtime.temp %></td>
+            </tr>
+            <tr>
+                <td>体感温度</td>
+                <td><%= data.realtime.sendibleTemp %></td>
+            </tr>
+            <tr>
+                <td>风向</td>
+                <td><%= data.realtime.wD %></td>
+            </tr>
+            <tr>
+                <td>风力</td>
+                <td><%= data.realtime.wS %></td>
+            </tr>
 
-  <ul>  
+        </table>
+    </div>
+    <div style="margin: 20px 0">生活提示</div>
     <table class="weather-table">
-        <% for(var i=0; i<data.length; i++) { %>  
+        <% for(var i=0; i<data.indexes.length; i++) { %>  
             <tr>  
-                <td><%= data[i].name %></td>
-                <td><%= data[i].content %></td> 
+                <td><%= data.indexes[i].name %></td>
+                <td>
+                    <div class="table-content"><%= data.indexes[i].level %> &nbsp; tips: <%= data.indexes[i].content %></div>
+                    
+                </td> 
             </tr>  
         <% } %>  
     </table>
