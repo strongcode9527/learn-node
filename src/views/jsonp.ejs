@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>learn-node-demo</title>
+</head>
+<body>
+  <div id="content"></div>
+</body>
+<script>
+    function callback(data) {
+      var div = document.getElementById('content')
+      div.innerHTML = JSON.stringify(data)
+    }
+</script>
+<script src="http://localhost:9527/jsonp/api?callback=callback"></script>
+</html>
