@@ -4,12 +4,38 @@
     <title>learn-node-demo</title>
 </head>
 <body>
-  <button onclick="upload()">上传图片</button>
+  <button id="submit">上传图片</button>
 </body>
 <script>
-  function upload() {
+  var submit = document.querySelector('#submit'),
+    formData = new FormData()
+  submit.addEventListener('click', function(e) {
+    var input = document.createElement('input')
     
+    input.setAttribute('type', 'file')
+    input.setAttribute('name', 'files')
+    input.click()
+    input.onchange = function() {
+      formData.append('files', input.files[0])
+      request()
+    } 
+  })
+  function request(options) {
+    var xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState === 4 && xhr.status === 200 ) {
+        //成功
+      } 
+      xhr.upload.onprogress = function(e) {
+        var loaded = e.loaded
+        var tot = e.total
+        var per = Math.floor(100 * loaded / tot)
+      }
+    }
+    xhr.open('post', '/upload/img')
+    xhr.send(formData)
   }
+
 </script>
-<script src="http://localhost:9527/jsonp/api?callback=callback"></script>
+
 </html>

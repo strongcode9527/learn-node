@@ -27,6 +27,7 @@
     "babel-register": "^6.26.0",
     "ejs": "^2.5.7",
     "koa": "^2.3.0",
+    "koa-multer": "^1.0.2",
     "koa-static": "^4.0.1",
     "koa-views": "^6.1.1"
   },
