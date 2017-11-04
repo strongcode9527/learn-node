@@ -1,19 +1,6 @@
-import multer from 'koa-multer'
-//文件上传  
-//配置  
-var storage = multer.diskStorage({  
-  //文件保存路径  
-  destination: function (req, file, cb) {  
-    cb(null, 'src/static/img')  
-  },  
-  //修改文件名称  
-  filename: function (req, file, cb) {  
-    var fileFormat = (file.originalname).split(".");  
-    cb(null,Date.now() + "." + fileFormat[fileFormat.length - 1]);  
-  }  
-})  
-//加载配置  
-export var uploadEvent = multer({ storage: storage }); 
+import fs from 'fs'
+import os from 'os'
+import path from 'path'
 
 export async function upload(ctx) {
   await ctx.render('upload', {
@@ -21,5 +8,16 @@ export async function upload(ctx) {
 } 
 
 export async function uploadApi(ctx) {
-  console.log(ctx.request)
+    // ignore non-POSTs
+    if ('POST' != ctx.method) return await next();
+    
+    const file = ctx.request.body.files.files;
+    const filenames = file.name.split('.')
+    const filename = Math.random().toString() + '.' + filenames[filenames.length - 1]
+    const reader = fs.createReadStream(file.path)
+    const stream = fs.createWriteStream(path.join("src/static/img", filename))
+    reader.pipe(stream);
+    console.log('uploading %s -> %s', file.name, stream.path);
+
+    ctx.body = filename
 }

@@ -5,9 +5,14 @@
 </head>
 <body>
   <button id="submit">上传图片</button>
+  <div id="percent">0</div>
+  <div>上传成功图片：</div>
+  <div id="result"></div>
 </body>
 <script>
   var submit = document.querySelector('#submit'),
+    percent = document.querySelector('#percent'),
+    result = document.querySelector('#result'),
     formData = new FormData()
   submit.addEventListener('click', function(e) {
     var input = document.createElement('input')
@@ -24,12 +29,14 @@
     var xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function() {
       if(xhr.readyState === 4 && xhr.status === 200 ) {
-        //成功
+        result.innerHTML = '<img src="/img/'+ xhr.responseText +'" style="max-width: 100%">'
       } 
       xhr.upload.onprogress = function(e) {
         var loaded = e.loaded
         var tot = e.total
         var per = Math.floor(100 * loaded / tot)
+        percent.innerHTML = percent.innerHTML + "<div>" + per + "%" + "</div>"
+        
       }
     }
     xhr.open('post', '/upload/img')

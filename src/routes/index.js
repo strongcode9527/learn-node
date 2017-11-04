@@ -1,5 +1,5 @@
 import weather from './weather'
-import {upload, uploadApi, uploadEvent} from './upload'
+import {upload, uploadApi} from './upload'
 import {jsonp, jsonpApi} from './jsonp'
 
 export default function(router){
@@ -10,5 +10,5 @@ export default function(router){
   router.get('/jsonp', jsonp )
   router.get('/jsonp/api', jsonpApi)
   router.get('/upload', upload)
-  router.post('/upload/img', uploadEvent.single('files'), uploadApi)
+  router.post('/upload/img', uploadApi)
 }
