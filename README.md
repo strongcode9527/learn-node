@@ -3,12 +3,13 @@ learn node.js
 
 一些学习node的小demo
 
+并且通过koa以及nodejs了解http以及通讯的相关知识
 
 ```
 
 yarn install
 
-npm run dev
+npm start
 
 ```
 
