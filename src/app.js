@@ -29,3 +29,5 @@ app
  
 app.listen(9527)
 
+console.log('the port is in 9527')
+
