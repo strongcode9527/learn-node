@@ -1,8 +1,8 @@
 import dns from './dns'
 import weather from './weather'
+import canvas2img from './canvas2img'
 import {jsonp, jsonpApi} from './jsonp'
 import {upload, uploadApi} from './upload'
-
 
 export default function(router){
   router.get('/',async function (ctx) {
@@ -14,4 +14,5 @@ export default function(router){
   router.get('/upload', upload)
   router.post('/upload/img', uploadApi)
   router.get('/dns', dns)
+  router.get('/canvas2img', canvas2img)
 }

@@ -25,11 +25,14 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
+    "canvas": "^1.6.11",
     "ejs": "^2.5.7",
     "koa": "^2.3.0",
     "koa-body": "^2.5.0",
     "koa-static": "^4.0.1",
-    "koa-views": "^6.1.1"
+    "koa-views": "^6.1.1",
+    "open": "^0.0.5",
+    "spritejs": "^2.6.3"
   },
   "devDependencies": {
     "cross-env": "^5.1.0",

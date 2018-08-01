@@ -1,9 +1,11 @@
 import Koa from 'koa'
 import path from 'path'
+import open from 'open'
 import views from 'koa-views'
 import koaBody from 'koa-body'
 import Router from 'koa-router'
 import koaStatic from 'koa-static'
+
 
 import routerConfig from './routes'
 
@@ -25,9 +27,13 @@ app
   .use(koaBody({multipart: true}))
   .use(router.routes()) 
   .use(router.allowedMethods)
-  
- 
+
+
 app.listen(9527)
 
-console.log('the port is in 9527')
+
+open('http://localhost:9527')
+ 
+
+
 
