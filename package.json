@@ -25,7 +25,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
-    "canvas": "^1.6.11",
+    "canvas": "^2.0.0-alpha.12",
     "ejs": "^2.5.7",
     "koa": "^2.3.0",
     "koa-body": "^2.5.0",

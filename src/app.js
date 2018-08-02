@@ -32,7 +32,7 @@ app
 app.listen(9527)
 
 
-open('http://localhost:9527')
+
  
 
 
