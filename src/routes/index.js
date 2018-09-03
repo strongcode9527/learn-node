@@ -1,4 +1,5 @@
 import dns from './dns'
+import cluster from './cluster'
 import weather from './weather'
 import canvas2img from './canvas2img'
 import {jsonp, jsonpApi} from './jsonp'
@@ -15,4 +16,5 @@ export default function(router){
   router.post('/upload/img', uploadApi)
   router.get('/dns', dns)
   router.get('/canvas2img', canvas2img)
+  router.get('./cluster', cluster)
 }
